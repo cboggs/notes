@@ -1,2 +1,4 @@
-# notes
-Brain dumps! Brain dumps everywhere!
+# Chowny's Notes
+
+## Table of Contents
+1. [Kubernetes](./kubernetes)
