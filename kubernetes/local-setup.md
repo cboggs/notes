@@ -19,6 +19,8 @@ There are a couple of ways to get local K8S running:
 ### CoreOS Multi-node: Vagrant
 _(Notes last updated: 7/13/2017)_
 
+**Note:** I strongly recommend spinning up more than one worker node (see the docs for instructions). Most things you want to deploy from other peoples' configs will impose resource limits and expectations, and you'll have a better time if you have more than one node. Plus, what's fun about testing on a single Docker-running VM?! :-)
+
 The steps given in the linked [documentation](https://coreos.com/kubernetes/docs/latest/kubernetes-on-vagrant.html) should get you 99% of the way there. There is one small bit that might throw you for a loop, regardless of the manner in which you setup your local `kubectl` config - the dashboard URL returned by `kubectl cluster-info` will yield `Unauthorized` until you run something like the following:
 
 `kubectl proxy --address="0.0.0.0" --port=9090`
