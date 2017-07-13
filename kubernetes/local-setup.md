@@ -18,6 +18,7 @@ There are a couple of ways to get local K8S running:
 
 ### CoreOS Multi-node: Vagrant
 _(Notes last updated: 7/13/2017)_
+
 Generally, the steps given in the linked [documentation](https://coreos.com/kubernetes/docs/latest/kubernetes-on-vagrant.html) will get you 99% of the way there. There is one small bit that might throw you for a loop, regardless of the manner in which you setup your local `kubectl` config - the dashboard URL returned by `kubectl cluster-info` will yield `Unauthorized` until you run something like the following:
 
 `kubectl proxy --address="0.0.0.0" --port=9090`
@@ -26,6 +27,7 @@ Now you should be able to hit `localhost:9090` and see an index of paths you can
 
 ### minikube
 _(Notes last updated: 7/13/2017)_
+
 Minikube can be deployed in lots of places on a handful of hypervisors, which makes it pretty versatile in terms of workstation deployment targets.
 
 The linked [docs](https://kubernetes.io/docs/getting-started-guides/minikube/) are pretty solid in terms of getting things to work without _too_ much hassle. That said, the documentation feels disjointed in some ways. Anyway, minikube generally "just works", but it tends to rely on the `minikube` command for most tasks (deploying stuff, exposing ports, etc), mostly for the sake of consolidating commands and hiding the work from the user. This is fine for a quick hack session, but if you want to actually figure out what K8S is doing behind the scenes and what is needed to actually do these things in a non-playground environment, you're best to avoid the "magic" of the `minikube` command.
