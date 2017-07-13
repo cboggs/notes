@@ -24,4 +24,10 @@ Generally, the steps given in the linked [documentation](https://coreos.com/kube
 
 Now you should be able to hit `localhost:9090` and see an index of paths you can navigate, one of which is `/ui`. So you should be able to see the dashboard at `http://localhost:9090/ui`. Enjoy!
 
+### minikube
+_(Notes last updated: 7/13/2017)_
+Minikube can be deployed in lots of places on a handful of hypervisors, which makes it pretty versatile in terms of workstation deployment targets.
 
+The linked [docs](https://kubernetes.io/docs/getting-started-guides/minikube/) are pretty solid in terms of getting things to work without _too_ much hassle. That said, the documentation feels disjointed in some ways. Anyway, minikube generally "just works", but it tends to rely on the `minikube` command for most tasks (deploying stuff, exposing ports, etc), mostly for the sake of consolidating commands and hiding the work from the user. This is fine for a quick hack session, but if you want to actually figure out what K8S is doing behind the scenes and what is needed to actually do these things in a non-playground environment, you're best to avoid the "magic" of the `minikube` command.
+
+One other small annoyance (to me) is that minkube runs a BusyBox VM, which is, quite simply, a royal pain in the neck. This may be an Ops-centric complaint, as I like to install lots of tools to inspect traffic and other bits of host behavior, and this is _incredibly_ frustrating (if not downright impossible) inside BusyBox. Given that this is a distribution that's primarily intended to be used in embedded environments, it seems a very odd choice for a local K8S environment.
